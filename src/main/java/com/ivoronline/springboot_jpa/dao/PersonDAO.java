@@ -1,4 +1,4 @@
-package com.ivoronline.springboot_jpa;
+package com.ivoronline.springboot_jpa.dao;
 
 import com.ivoronline.springboot_jpa.entity.Person;
 

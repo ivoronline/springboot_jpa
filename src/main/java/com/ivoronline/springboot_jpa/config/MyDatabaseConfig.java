@@ -1,4 +1,4 @@
-package com.ivoronline.springboot_jpa;
+package com.ivoronline.springboot_jpa.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 @Configuration
 //@EnableJpaRepositories
-@EnableTransactionManagement
+//@EnableTransactionManagement
 public class MyDatabaseConfig {
 
   //=========================================================================================================

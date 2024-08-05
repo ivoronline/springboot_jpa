@@ -1,5 +1,6 @@
-package com.ivoronline.springboot_jpa;
+package com.ivoronline.springboot_jpa.runner;
 
+import com.ivoronline.springboot_jpa.dao.PersonDAO;
 import com.ivoronline.springboot_jpa.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
