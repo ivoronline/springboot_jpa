@@ -16,8 +16,10 @@ public class MyRunner implements CommandLineRunner {
   //=========================================================================================================
   @Override
   public void run(String... args) {
-    PersonDAO personDAO = new PersonDAOImpl();
-    personDAO.save(new Person(0, "John" , 20));
+    Person person = new Person();
+           person.setName("John");
+           person.setAge(50);
+    personDAO.save(person);
   }
   
 }
