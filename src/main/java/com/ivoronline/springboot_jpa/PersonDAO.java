@@ -1,7 +1,6 @@
 package com.ivoronline.springboot_jpa;
 
 import com.ivoronline.springboot_jpa.entity.Person;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PersonDAO {
-  void save(Person person);
-}
+public interface PersonDAO extends JpaRepository<Person, Integer> { }
