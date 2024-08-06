@@ -19,7 +19,7 @@ import java.util.Properties;
 public class MyDatabaseConfig {
 
   //PROPERTIES
-  @Autowired private Environment env; //To control Hibernate
+  @Autowired private Environment env; //TO RECREATE TABLE
 
   //=========================================================================================================
   // DATA SOURCE
@@ -43,6 +43,7 @@ public class MyDatabaseConfig {
   @Bean
   LocalContainerEntityManagerFactoryBean entityManagerFactory() {
   
+    //TO RECREATE TABLE
     //Hibernate Properties from application.properties are ignored => We need to set them manually
     HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
                               hibernateJpaVendorAdapter.setGenerateDdl(true);
@@ -52,8 +53,8 @@ public class MyDatabaseConfig {
     entityManagerFactory.setDataSource         (dataSource());
     entityManagerFactory.setPackagesToScan     ("com.ivoronline.springboot_jpa.entity");
   //entityManagerFactory.setJpaVendorAdapter   (new HibernateJpaVendorAdapter());
-    entityManagerFactory.setJpaVendorAdapter   (hibernateJpaVendorAdapter); //To control Hibernate
-    entityManagerFactory.setJpaProperties(additionalProperties());          //To control Hibernate
+    entityManagerFactory.setJpaVendorAdapter   (hibernateJpaVendorAdapter); //TO RECREATE TABLE
+    entityManagerFactory.setJpaProperties(additionalProperties());          //TO RECREATE TABLE
     entityManagerFactory.setPersistenceUnitName("myunit");
       
     return entityManagerFactory;
@@ -63,7 +64,7 @@ public class MyDatabaseConfig {
   //=========================================================================================================
   // ADDITIONAL PROPERTIES
   //=========================================================================================================
-  // Reading Hibernate Properties from application.properties
+  // TO RECREATE TABLE =>  Reading Hibernate Properties from application.properties
   private Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
